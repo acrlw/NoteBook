@@ -1,0 +1,325 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>697</width>
+    <height>413</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Notebook</string>
+  </property>
+  <property name="windowIcon">
+   <iconset>
+    <normaloff>Notepad.png</normaloff>Notepad.png</iconset>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <layout class="QGridLayout" name="gridLayout">
+    <item row="0" column="0">
+     <widget class="QTextEdit" name="txtcontext">
+      <property name="font">
+       <font>
+        <family>新宋体</family>
+       </font>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>697</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="mFile">
+    <property name="title">
+     <string>文件(F)</string>
+    </property>
+    <addaction name="acNew"/>
+    <addaction name="acOpen"/>
+    <addaction name="acSave"/>
+    <addaction name="acSaveas"/>
+    <addaction name="separator"/>
+    <addaction name="acExit"/>
+   </widget>
+   <widget class="QMenu" name="mEdit">
+    <property name="title">
+     <string>编辑(E)</string>
+    </property>
+    <addaction name="acUndo"/>
+    <addaction name="acRedo"/>
+    <addaction name="separator"/>
+    <addaction name="acShear"/>
+    <addaction name="acCopy"/>
+    <addaction name="acPaste"/>
+    <addaction name="acDelete"/>
+    <addaction name="separator"/>
+    <addaction name="acSelect"/>
+    <addaction name="acDeleteAll"/>
+   </widget>
+   <widget class="QMenu" name="mFormat">
+    <property name="title">
+     <string>格式(O)</string>
+    </property>
+    <addaction name="acFont"/>
+    <addaction name="acColor"/>
+   </widget>
+   <widget class="QMenu" name="mHelp">
+    <property name="title">
+     <string>帮助(H)</string>
+    </property>
+    <addaction name="acAbout"/>
+   </widget>
+   <addaction name="mFile"/>
+   <addaction name="mEdit"/>
+   <addaction name="mFormat"/>
+   <addaction name="mHelp"/>
+  </widget>
+  <action name="acNew">
+   <property name="text">
+    <string>新建</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+N</string>
+   </property>
+  </action>
+  <action name="acOpen">
+   <property name="text">
+    <string>打开</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+O</string>
+   </property>
+  </action>
+  <action name="acSave">
+   <property name="text">
+    <string>保存</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+S</string>
+   </property>
+  </action>
+  <action name="acSaveas">
+   <property name="text">
+    <string>另存为</string>
+   </property>
+  </action>
+  <action name="acExit">
+   <property name="text">
+    <string>退出</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+E</string>
+   </property>
+  </action>
+  <action name="acUndo">
+   <property name="text">
+    <string>撤销</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Z</string>
+   </property>
+  </action>
+  <action name="acShear">
+   <property name="text">
+    <string>剪切</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+X</string>
+   </property>
+  </action>
+  <action name="acCopy">
+   <property name="text">
+    <string>复制</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+C</string>
+   </property>
+  </action>
+  <action name="acPaste">
+   <property name="text">
+    <string>粘贴</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+V</string>
+   </property>
+  </action>
+  <action name="acDelete">
+   <property name="text">
+    <string>删除</string>
+   </property>
+   <property name="shortcut">
+    <string>Del</string>
+   </property>
+  </action>
+  <action name="acFont">
+   <property name="text">
+    <string>字体</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+F</string>
+   </property>
+  </action>
+  <action name="acAbout">
+   <property name="text">
+    <string>关于记事本</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Alt+B</string>
+   </property>
+  </action>
+  <action name="acRedo">
+   <property name="text">
+    <string>重做</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+R</string>
+   </property>
+  </action>
+  <action name="acSelect">
+   <property name="text">
+    <string>选中全部</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+A</string>
+   </property>
+  </action>
+  <action name="acDeleteAll">
+   <property name="text">
+    <string>删除全部</string>
+   </property>
+  </action>
+  <action name="acColor">
+   <property name="text">
+    <string>颜色</string>
+   </property>
+  </action>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>acCopy</sender>
+   <signal>triggered()</signal>
+   <receiver>txtcontext</receiver>
+   <slot>copy()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>329</x>
+     <y>215</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>acExit</sender>
+   <signal>triggered()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>close()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>329</x>
+     <y>203</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>acPaste</sender>
+   <signal>triggered()</signal>
+   <receiver>txtcontext</receiver>
+   <slot>paste()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>329</x>
+     <y>215</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>acUndo</sender>
+   <signal>triggered()</signal>
+   <receiver>txtcontext</receiver>
+   <slot>undo()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>329</x>
+     <y>215</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>acRedo</sender>
+   <signal>triggered()</signal>
+   <receiver>txtcontext</receiver>
+   <slot>redo()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>329</x>
+     <y>215</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>acDeleteAll</sender>
+   <signal>triggered()</signal>
+   <receiver>txtcontext</receiver>
+   <slot>clear()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>329</x>
+     <y>215</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>acSelect</sender>
+   <signal>triggered()</signal>
+   <receiver>txtcontext</receiver>
+   <slot>selectAll()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>329</x>
+     <y>215</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>onWindowsExit()</slot>
+ </slots>
+</ui>
